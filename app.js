@@ -108,7 +108,7 @@ const human = (function(){
         createHumanObject : publicCreateHuman,
         loadImage : publicLaodImage
     }
-}())
+}());
 
 // Use IIFE to get human data from form
 const getHumanData = (function(){
@@ -124,7 +124,7 @@ const getHumanData = (function(){
         form.style.display = "none";
         generateTiles();
     })
-}())
+}());
 
 // Create Dino Compare Method 1
 // NOTE: Weight in JSON file is in lbs, height in inches. 
@@ -178,7 +178,7 @@ const compare = () => {
         dino.compareDiet(diet);
     })
 
-}
+};
 
 // get random fact
 const getRandomFact = (facts) => {
@@ -199,7 +199,7 @@ const getRandomFact = (facts) => {
         default:
             return facts[0];
     };
-}
+};
 
 // Generate Tiles for each Dino in Array
 const generateTiles = () =>{
@@ -248,4 +248,4 @@ const generateTiles = () =>{
             tile.appendChild(img);
         }
     }
-}
+};
