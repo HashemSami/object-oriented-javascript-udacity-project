@@ -1,5 +1,5 @@
-{
-    "Dinos": [
+const dinosData = {
+    Dinos: [
         {
             "species": "Triceratops",
             "weight": 13000,

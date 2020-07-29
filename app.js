@@ -1,16 +1,4 @@
 
-// function for loading JSON file
-function readTextFile(file, callback) {
-    const rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
 
 // Create Dino Constructor
 function Dino ({species, weight, height, diet, where, when, fact}) {
@@ -56,18 +44,17 @@ Pigeon.prototype.constructor = Pigeon;
 // Create Pigeon object
 let pigeon;
 const dinos = [];
-readTextFile("dino.json", function(text){
-    const data = JSON.parse(text);
-    data.Dinos.forEach((dino)=>{
+function addData(){
+    dinosData.Dinos.forEach((dino)=>{
         if(!(dino.species === "Pigeon")){
             dinos.push(new Dino(dino));
         }else{
             pigeon = new Pigeon(dino);
         }
     })
-});
+}
 
-
+addData();
 
 // Create Human Object
 const human = (function(){
